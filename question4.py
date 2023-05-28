@@ -29,6 +29,8 @@ def OverloadCondition(overload_list, time):
     overload_sum = 0
     for data in overload_list:
         overload_sum += data[1]
+    if overload_sum == 0:
+        return False
     overload_ave = overload_sum // len(overload_list)
     if overload_ave > time:
         if len(overload_list) > 1:
@@ -102,7 +104,6 @@ for ans_add, time in ans.items():
     ans_sub = ipaddress.ip_network(ans_add, strict=False)
     ans_subnet_list[ans_sub].add(ans_add)
     ans_subnet_list_time[ans_add] = time
-
 
 for sub in subnet_list:
     if len(subnet_list[sub]) == len(ans_subnet_list[sub]):

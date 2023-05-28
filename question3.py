@@ -16,7 +16,6 @@ num = args.n
 server_inf = defaultdict(list)
 overload_cnt = args.m
 overload_time = args.t
-print(num, overload_cnt, overload_time)
 
 # 故障したサーバーリストにアドレスが存在するか確認
 def IsfailServer(fail_server, address):
